@@ -30,7 +30,7 @@ class Rational (n: Int, d: Int) {
   def -(i: Int): Rational = {
     Rational (numerator - i * denominator, denominator)
   }
-  
+
   @targetName("Multiply rational number")
   def *(that: Rational): Rational = {
     Rational(numerator * that.numerator, denominator * that.denominator)
@@ -40,7 +40,7 @@ class Rational (n: Int, d: Int) {
   def *(i: Int): Rational = {
     Rational(numerator * i, denominator)
   }
-  
+
   @targetName("Divide rational number")
   def /(that: Rational): Rational = {
     Rational(numerator * that.denominator, denominator * that.numerator)
@@ -50,6 +50,8 @@ class Rational (n: Int, d: Int) {
   def /(i: Int): Rational = {
     Rational(numerator, denominator * i)
   }
+
+  override def toString: String = s"$numerator/$denominator"
 
   @tailrec
   private def gcd(a: Int, b: Int): Int = {
