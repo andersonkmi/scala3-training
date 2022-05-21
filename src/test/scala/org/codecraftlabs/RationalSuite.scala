@@ -43,4 +43,12 @@ class RationalSuite extends munit.FunSuite {
     assertEquals(result.numerator, 1)
     assertEquals(result.denominator, 4)
   }
+
+  test ("Multiply integer") {
+    val r1 = Rational(1, 2)
+
+    val result = r1 * 3
+    assertEquals(result.numerator, 3)
+    assertEquals(result.denominator, 2)
+  }
 }

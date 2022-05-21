@@ -36,6 +36,11 @@ class Rational (n: Int, d: Int) {
     Rational(numerator * that.numerator, denominator * that.denominator)
   }
 
+  @targetName("Multiply integer number")
+  def *(i: Int): Rational = {
+    Rational(numerator * i, denominator)
+  }
+
   @tailrec
   private def gcd(a: Int, b: Int): Int = {
     if b == 0 then a else gcd (b, a % b)
