@@ -14,7 +14,7 @@ class RationalSuite extends munit.FunSuite {
     val r1 = Rational(1, 5)
 
     val result = r1 + 1
-    assertEquals(result.numerator, 2)
+    assertEquals(result.numerator, 6)
     assertEquals(result.denominator, 5)
   }
 
@@ -25,5 +25,13 @@ class RationalSuite extends munit.FunSuite {
     val result = r1 - r2
     assertEquals(result.numerator, 1)
     assertEquals(result.denominator, 2)
+  }
+
+  test ("Subtract rational number from an integer value") {
+    val r1 = Rational(2, 5)
+
+    val result = r1 - 1
+    assertEquals(result.numerator, -3)
+    assertEquals(result.denominator, 5)
   }
 }

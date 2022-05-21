@@ -16,11 +16,15 @@ class Rational (n: Int, d: Int) {
   }
 
   def + (i: Int): Rational = {
-    Rational (numerator + i, denominator)
+    Rational (numerator + i * denominator, denominator)
   }
-  
+
   def - (that: Rational): Rational = {
     Rational (numerator * that.denominator - that.numerator * denominator, denominator * that.denominator)
+  }
+
+  def - (i: Int): Rational = {
+    Rational (numerator - i * denominator, denominator)
   }
 
   @tailrec
