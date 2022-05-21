@@ -51,4 +51,21 @@ class RationalSuite extends munit.FunSuite {
     assertEquals(result.numerator, 3)
     assertEquals(result.denominator, 2)
   }
+
+  test ("Divide two rationals") {
+    val r1 = Rational(1, 5)
+    val r2 = Rational(1, 2)
+
+    val result = r1 / r2
+    assertEquals(result.numerator, 2)
+    assertEquals(result.denominator, 5)
+  }
+
+  test ("Divide by integer") {
+    val r1 = Rational(1, 5)
+
+    val result = r1 / 2
+    assertEquals(result.numerator, 1)
+    assertEquals(result.denominator, 10)
+  }
 }
