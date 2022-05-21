@@ -34,4 +34,13 @@ class RationalSuite extends munit.FunSuite {
     assertEquals(result.numerator, -3)
     assertEquals(result.denominator, 5)
   }
+
+  test ("Multiply two rationals") {
+    val r1 = Rational(1, 2)
+    val r2 = Rational(1, 2)
+
+    val result = r1 * r2
+    assertEquals(result.numerator, 1)
+    assertEquals(result.denominator, 4)
+  }
 }

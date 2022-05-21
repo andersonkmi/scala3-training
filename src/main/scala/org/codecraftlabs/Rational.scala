@@ -30,6 +30,11 @@ class Rational (n: Int, d: Int) {
   def -(i: Int): Rational = {
     Rational (numerator - i * denominator, denominator)
   }
+  
+  @targetName("Multiply rational number")
+  def *(that: Rational): Rational = {
+    Rational(numerator * that.numerator, denominator * that.denominator)
+  }
 
   @tailrec
   private def gcd(a: Int, b: Int): Int = {
