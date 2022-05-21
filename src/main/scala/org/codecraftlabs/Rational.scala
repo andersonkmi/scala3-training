@@ -18,6 +18,10 @@ class Rational (n: Int, d: Int) {
   def + (i: Int): Rational = {
     Rational (numerator + i, denominator)
   }
+  
+  def - (that: Rational): Rational = {
+    Rational (numerator * that.denominator - that.numerator * denominator, denominator * that.denominator)
+  }
 
   @tailrec
   private def gcd(a: Int, b: Int): Int = {
