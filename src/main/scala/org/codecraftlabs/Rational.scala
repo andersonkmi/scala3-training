@@ -1,6 +1,6 @@
 package org.codecraftlabs
 
-import scala.annotation.tailrec
+import scala.annotation.{tailrec, targetName}
 
 class Rational (n: Int, d: Int) {
   require(d != 0)
@@ -11,19 +11,23 @@ class Rational (n: Int, d: Int) {
 
   def this (n: Int) = this (n, 1)
 
+  @targetName("Add rational number")
   def +(that: Rational): Rational = {
     Rational (numerator * that.denominator + that.numerator * denominator, denominator * that.denominator)
   }
 
-  def + (i: Int): Rational = {
+  @targetName("Add integer")
+  def +(i: Int): Rational = {
     Rational (numerator + i * denominator, denominator)
   }
 
-  def - (that: Rational): Rational = {
+  @targetName("Subtract rational number")
+  def -(that: Rational): Rational = {
     Rational (numerator * that.denominator - that.numerator * denominator, denominator * that.denominator)
   }
 
-  def - (i: Int): Rational = {
+  @targetName("Subtract integer")
+  def -(i: Int): Rational = {
     Rational (numerator - i * denominator, denominator)
   }
 
