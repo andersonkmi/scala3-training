@@ -6,7 +6,15 @@ class RationalSuite extends munit.FunSuite {
     val r2 = Rational(1, 3)
 
     val result = r1 + r2
-    assertEquals(result.numer, 2)
-    assertEquals(result.denom, 3)
+    assertEquals(result.numerator, 2)
+    assertEquals(result.denominator, 3)
+  }
+
+  test ("Add rational number to an integer value") {
+    val r1 = Rational(1, 5)
+
+    val result = r1 + 1
+    assertEquals(result.numerator, 2)
+    assertEquals(result.denominator, 5)
   }
 }

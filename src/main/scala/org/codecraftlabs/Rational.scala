@@ -6,13 +6,17 @@ class Rational (n: Int, d: Int) {
   require(d != 0)
 
   private val g = gcd (n.abs, d.abs)
-  val  numer = n / g
-  val denom = d / g
-  
+  val numerator: Int = n / g
+  val denominator: Int = d / g
+
   def this (n: Int) = this (n, 1)
-  
+
   def +(that: Rational): Rational = {
-    Rational (numer * that.denom + that.numer * denom, denom * that.denom)
+    Rational (numerator * that.denominator + that.numerator * denominator, denominator * that.denominator)
+  }
+
+  def + (i: Int): Rational = {
+    Rational (numerator + i, denominator)
   }
 
   @tailrec
