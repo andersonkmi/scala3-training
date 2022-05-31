@@ -58,3 +58,9 @@ class Rational (n: Int, d: Int) {
     if b == 0 then a else gcd (b, a % b)
   }
 }
+
+object Rational {
+  def apply(numerator: Int, denominator: Int = 1): Rational = {
+    new Rational(numerator, denominator)
+  }
+}
