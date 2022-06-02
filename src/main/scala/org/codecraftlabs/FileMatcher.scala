@@ -16,7 +16,7 @@ object FileMatcher {
     filesMatching(_.matches(query))
   }
 
-  private def filesHere = new java.io.File(".").listFiles
+  private def filesHere = new File(".").listFiles
 
   private def filesMatching(matcher: String => Boolean): Array[File] = {
     for file <- filesHere if matcher(file.getName)
