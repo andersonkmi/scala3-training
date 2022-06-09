@@ -10,11 +10,9 @@ abstract class Element {
   }
 
   def beside(that: Element): Element = {
-    val newContents = new Array[String](this.contents.length)
-
-    for i <- this.contents.indices do
-      newContents(i) = this.contents(i) + that.contents(i)
-
-    VectorElement(newContents.toVector)
+    VectorElement(
+      for (line1, line2) <- this.contents.zip(that.contents)
+      yield line1 + line2
+    )
   }
 }
