@@ -15,4 +15,6 @@ abstract class Element {
       yield line1 + line2
     )
   }
+
+  override def toString: String = contents.mkString("\n")
 }
