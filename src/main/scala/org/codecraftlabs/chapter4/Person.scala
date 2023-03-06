@@ -8,8 +8,6 @@ object Person:
   def apply(name: String, age: Int): Person =
     val capitalizedName =
       if name.nonEmpty then
-        val firstChar = name.charAt(0).toUpper
-        val restOfName = name.substring(1)
-        s"$firstChar$restOfName"
+        name.capitalize
       else throw new IllegalArgumentException("Empty name")
     new Person(capitalizedName, age)
