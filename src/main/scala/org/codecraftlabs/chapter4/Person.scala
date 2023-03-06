@@ -7,7 +7,7 @@ case class Person(name: String, age: Int) :
 object Person:
   def apply(name: String, age: Int): Person =
     val capitalizedName =
-      if name.nonEmpty then
+      if name != null && name.nonEmpty then
         name.capitalize
       else throw new IllegalArgumentException("Empty name")
     new Person(capitalizedName, age)

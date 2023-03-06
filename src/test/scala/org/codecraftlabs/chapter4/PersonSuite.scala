@@ -21,4 +21,16 @@ class PersonSuite extends munit.FunSuite {
     assertEquals(person.name, "Anderson")
     assertEquals(person.age, 32)
   }
+
+  test("Should throw an IllegalArgumentException when name is empty") {
+    interceptMessage[IllegalArgumentException]("Empty name") {
+      Person("", 12)
+    }
+  }
+
+  test("Should throw an IllegalArgumentException when name is null") {
+    interceptMessage[IllegalArgumentException]("Empty name") {
+      Person(null, 12)
+    }
+  }
 }
