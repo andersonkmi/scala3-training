@@ -15,4 +15,10 @@ class PersonSuite extends munit.FunSuite {
     assertEquals(modifiedPerson.name, "Anderson Silva")
     assertEquals(modifiedPerson.age, 32)
   }
+
+  test("First char must be capitalized") {
+    val person = Person("anderson", 32)
+    assertEquals(person.name, "Anderson")
+    assertEquals(person.age, 32)
+  }
 }
