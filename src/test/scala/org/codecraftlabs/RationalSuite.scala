@@ -68,4 +68,10 @@ class RationalSuite extends munit.FunSuite {
     assertEquals(result.numerator, 1)
     assertEquals(result.denominator, 10)
   }
+
+  test ("Should throw IllegalArgumentException when denominator is 0") {
+    intercept[IllegalArgumentException] {
+      Rational(1, 0)
+    }
+  }
 }
