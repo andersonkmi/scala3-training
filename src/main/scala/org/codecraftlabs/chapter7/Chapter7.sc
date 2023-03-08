@@ -5,7 +5,7 @@ def fileLines(file: java.io.File) = {
   scala.io.Source.fromFile(file).getLines().toArray
 }
 
-def grep(pattern: String): Unit =
+def grepMkI(pattern: String): Unit =
   for
     file <- filesHere
     if file.getName.endsWith(".scala")
@@ -14,4 +14,23 @@ def grep(pattern: String): Unit =
   do println(s"$file: ${line.trim}")
 
 
-grep(".*gcd.*")
+grepMkI(".*gcd.*")
+
+def grepMkII(pattern: String): Unit =
+  for
+    file <- filesHere
+    if file.getName.endsWith(".scala")
+    line <- fileLines(file)
+    trimmed = line.trim
+    if trimmed.matches(pattern)
+  do println(s"$file: $trimmed")
+
+
+grepMkII(".*gcd.*")
+
+def scalaFiles =
+  for
+    file <- filesHere
+    if file.getName.endsWith(".scala")
+  yield file
+
