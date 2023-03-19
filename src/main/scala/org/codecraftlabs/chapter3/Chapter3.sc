@@ -1,3 +1,4 @@
+import scala.collection.ArrayOps
 import scala.collection.mutable.ArrayBuffer
 
 // Exercise 5 - calculate average of Array[Double]
@@ -12,3 +13,8 @@ ex06.reverse
 
 val ex06Buffer = ArrayBuffer(1, 2, 3)
 ex06Buffer.reverse
+
+// Exercise 7 - remove duplicates
+val ex07 = Array(1, 2, 3, 4, 5, 1, 2)
+val arrayOps: ArrayOps[Int] = ex07
+arrayOps.distinct
