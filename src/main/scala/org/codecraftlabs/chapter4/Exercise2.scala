@@ -14,6 +14,6 @@ object Exercise2 {
       } else {
         wordMap(token) = 1
       }
-    wordMap
+    wordMap.withDefaultValue(0)
   }
 }
