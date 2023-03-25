@@ -1,10 +1,12 @@
 package org.codecraftlabs.chapter5
 
-class BankAccount(private var balance: Double):
+class BankAccount(private var accountBalance: Double):
   def deposit(amount: Double): Double =
-    balance += amount
-    balance
+    accountBalance += amount
+    accountBalance
 
   def withdraw(amount: Double): Double =
-    balance -= amount
-    balance
+    accountBalance -= amount
+    accountBalance
+
+  def balance: Double = accountBalance
