@@ -2,7 +2,7 @@ package org.codecraftlabs.chapter5
 
 class BankAccountSuite extends munit.FunSuite {
   test("Deposit BankAccount") {
-    val bankAccount = BankAccount(0)
+    val bankAccount = BankAccount()
     assertEquals(bankAccount.deposit(2.00), 2.00)
   }
 
