@@ -2,7 +2,7 @@ package org.codecraftlabs.chapter2
 
 import org.codecraftlabs.chapter4.Person
 
-class Exercise5Suite extends munit.FunSuite {
+class Exercise05Suite extends munit.FunSuite {
   test("Verify if a number is positive") {
     assertEquals(Exercise5.signum(1), 1)
   }
