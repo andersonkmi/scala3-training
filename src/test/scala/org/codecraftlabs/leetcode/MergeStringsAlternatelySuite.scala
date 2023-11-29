@@ -30,4 +30,12 @@ class MergeStringsAlternatelySuite extends munit.FunSuite {
     val result: String = MergeStringsAlternately.run(word1, word2)
     assertEquals(result, expectedResult)
   }
+
+  test("Merge 2 strings with different lengths again") {
+    val expectedResult: String = "abc"
+    val word1: String = "a"
+    val word2: String = "bc"
+    val result: String = MergeStringsAlternately.run(word1, word2)
+    assertEquals(result, expectedResult)
+  }
 }
