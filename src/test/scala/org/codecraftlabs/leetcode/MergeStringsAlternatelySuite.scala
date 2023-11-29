@@ -16,4 +16,18 @@ class MergeStringsAlternatelySuite extends munit.FunSuite {
     val result: String = MergeStringsAlternately.run(word1, word2)
     assertEquals(result, expectedResult)
   }
+
+  test ("Merge 2 empty strings should result in an empty string as well") {
+    val expectedResult: String = ""
+    val result: String = MergeStringsAlternately.run("", "")
+    assertEquals(result, expectedResult)
+  }
+
+  test ("Merge 2 strings with different lengths") {
+    val expectedResult: String = "acb"
+    val word1: String = "ab"
+    val word2: String = "c"
+    val result: String = MergeStringsAlternately.run(word1, word2)
+    assertEquals(result, expectedResult)
+  }
 }
