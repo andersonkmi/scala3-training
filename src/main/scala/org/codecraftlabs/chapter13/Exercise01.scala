@@ -15,4 +15,11 @@ object Exercise01 {
 
     result
   }
+
+  def getIndexes(input: String): mutable.Map[Char, mutable.SortedSet[Int]] = {
+    input.indices.foldLeft(mutable.Map[Char, mutable.SortedSet[Int]]()) {
+      (m, i) =>
+        m += (input(i) -> (m.getOrElse(input(i), mutable.SortedSet[Int]()) += i))
+    }
+  }
 }
